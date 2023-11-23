@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lab02</string>
+    <string name="hint">Employee name</string>
+    <string name="search">Add name</string>
+    <string name="enterName">Enter name: </string>
+
+    <string name="tvAppname">Student Management System</string>
+    <string name="tvid">Student ID: </string>
+    <string name="tvname">Student Name: </string>
+    <string name="tvFT">Full-time</string>
+    <string name="tvPT">Part-time</string>
+    <string name="Categories">Categories</string>
+    <string name="add">Insert Student</string>
+    <string name="hintname">Student name</string>
+    <string name="hintid">Student ID</string>
+    <string name="title_activity_bai3">Bai3</string>
+    <string name="staff">Staff</string>
+</resources>
