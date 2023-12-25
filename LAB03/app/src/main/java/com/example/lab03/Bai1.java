@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -29,6 +30,11 @@ public class Bai1 extends AppCompatActivity {
         setContentView(R.layout.activity_bai1);
         findViewsByIds();
         initVariables();
+
+        //ANIMATION USING CODE FUNCTION
+        handleClickAnimationCode(btnFadeInCode, initFadeInAnimation());
+
+        //ANIMATION USING XML FILES
         handleClickAnimationXml(btnFadeInXml, R.anim.anim_fade_in);
         handleClickAnimationXml(btnBlinkXml, R.anim.anim_blink);
         handleClickAnimationXml(btnBounceXml, R.anim.anim_bounce);
@@ -39,6 +45,24 @@ public class Bai1 extends AppCompatActivity {
         handleClickAnimationXml(btnZoomInXml, R.anim.anim_zoom_in);
         handleClickAnimationXml(btnZoomOutXml, R.anim.anim_zoom_out);
         handleClickAnimationXml(btnCombineXml, R.anim.anim_combine);
+    }
+
+    private Animation initFadeInAnimation(){
+        AlphaAnimation animation = new AlphaAnimation(0f, 1f);
+        animation.setDuration(3000);
+        animation.setFillAfter(true);
+        animation.setAnimationListener(animationListener);
+        return animation;
+    }
+
+    private void handleClickAnimationCode(Button btn, final Animation animation){
+        // Handle onclickListenner to start animation
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ivUitLogo.startAnimation(animation);
+            }
+        });
     }
 
     private void handleClickAnimationXml(Button btn, int animId){
