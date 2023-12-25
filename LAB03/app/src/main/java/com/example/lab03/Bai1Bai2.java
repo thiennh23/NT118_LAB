@@ -2,7 +2,7 @@ package com.example.lab03;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -19,7 +19,7 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.BounceInterpolator;
 
 
-public class Bai1 extends AppCompatActivity {
+public class Bai1Bai2 extends AppCompatActivity {
 
     private Button btnFadeInXml, btnFadeInCode, btnFadeOutXml, btnFadeOutCode,
             btnBlinkXml,
@@ -38,6 +38,16 @@ public class Bai1 extends AppCompatActivity {
         setContentView(R.layout.activity_bai1);
         findViewsByIds();
         initVariables();
+
+        ivUitLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Bai1Bai2.this, Bai3.class);
+                startActivity(intent);
+                // Animation for moving from right to left
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            }
+        });
 
         //ANIMATION USING CODE FUNCTION
         handleClickAnimationCode(btnFadeInCode, initFadeInAnimation());
@@ -230,7 +240,7 @@ public class Bai1 extends AppCompatActivity {
     }
 
     private void handleClickAnimationXml(Button btn, int animId){
-        final Animation animation = AnimationUtils.loadAnimation(Bai1.this, animId);
+        final Animation animation = AnimationUtils.loadAnimation(Bai1Bai2.this, animId);
         animation.setAnimationListener(animationListener);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

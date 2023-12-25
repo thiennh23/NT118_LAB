@@ -22,7 +22,7 @@
             android:name=".Bai2"
             android:exported="false" />
         <activity
-            android:name=".Bai1"
+            android:name=".Bai1Bai2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
