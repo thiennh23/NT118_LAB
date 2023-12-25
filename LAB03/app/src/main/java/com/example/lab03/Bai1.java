@@ -2,11 +2,16 @@ package com.example.lab03;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -38,6 +43,13 @@ public class Bai1 extends AppCompatActivity {
         handleClickAnimationCode(btnFadeInCode, initFadeInAnimation());
         handleClickAnimationCode(btnBlinkCode, initBlinkAnimation());
         handleClickAnimationCode(btnBounceCode, initBounceAnimation());
+        handleClickAnimationCode(btnFadeOutCode, initFadeOutAnimation());
+        handleClickAnimationCode(btnMoveCode, initMoveAnimation());
+        handleClickAnimationCode(btnRotateCode, initRotateAnimation());
+        handleClickAnimationCode(btnSlideUpCode, initSlideUpAnimation());
+        handleClickAnimationCode(btnZoomInCode, initZoomInAnimation());
+        handleClickAnimationCode(btnZoomOutCode, initZoomOutAnimation());
+        handleClickAnimationCode(btnCombineCode, initCombinedAnimation());
 
         //ANIMATION USING XML FILES
         handleClickAnimationXml(btnFadeInXml, R.anim.anim_fade_in);
@@ -50,6 +62,127 @@ public class Bai1 extends AppCompatActivity {
         handleClickAnimationXml(btnZoomInXml, R.anim.anim_zoom_in);
         handleClickAnimationXml(btnZoomOutXml, R.anim.anim_zoom_out);
         handleClickAnimationXml(btnCombineXml, R.anim.anim_combine);
+    }
+
+    private Animation initCombinedAnimation(){
+        AnimationSet animationSet = new AnimationSet(true);
+
+        // Scale-up animation
+        ScaleAnimation scaleAnimation = new ScaleAnimation(
+                1.0f, 3.0f,  // From X and Y scale (start with original size)
+                1.0f, 3.0f,  // To X and Y scale (scale up by a factor of 3)
+                Animation.RELATIVE_TO_SELF, 0.5f,  // Pivot X (center of the view)
+                Animation.RELATIVE_TO_SELF, 0.5f   // Pivot Y (center of the view)
+        );
+        scaleAnimation.setDuration(4000);
+        scaleAnimation.setFillAfter(true);
+
+        // Rotate animation
+        RotateAnimation rotateAnimation = new RotateAnimation(
+                0, 360,  // From and to degrees (rotate 360 degrees)
+                Animation.RELATIVE_TO_SELF, 0.5f,  // Pivot X (center of the view)
+                Animation.RELATIVE_TO_SELF, 0.5f   // Pivot Y (center of the view)
+        );
+        rotateAnimation.setDuration(500);
+        rotateAnimation.setRepeatCount(2);
+        rotateAnimation.setRepeatMode(Animation.RESTART);
+
+        // Add animations to the set
+        animationSet.addAnimation(scaleAnimation);
+        animationSet.addAnimation(rotateAnimation);
+
+        // Set interpolator
+        animationSet.setInterpolator(new LinearInterpolator());
+
+        // Set fill after
+        animationSet.setFillAfter(true);
+
+        // Set animation listener if needed
+        animationSet.setAnimationListener(animationListener);
+
+        return animationSet;
+    }
+
+
+    private Animation initZoomOutAnimation(){
+        ScaleAnimation animation = new ScaleAnimation(
+                1.0f, 0.5f,  // From X and Y scale (start with original size)
+                1.0f, 0.5f,  // To X and Y scale (zoom out by a factor of 0.5)
+                Animation.RELATIVE_TO_SELF, 0.5f,  // Pivot X (center of the view)
+                Animation.RELATIVE_TO_SELF, 0.5f   // Pivot Y (center of the view)
+        );
+
+        animation.setDuration(1000);
+        animation.setFillAfter(true);
+        animation.setAnimationListener(animationListener);
+        return animation;
+    }
+
+
+    private Animation initZoomInAnimation(){
+        ScaleAnimation animation = new ScaleAnimation(
+                1.0f, 3.0f,  // From X and Y scale (start with original size)
+                1.0f, 3.0f,  // To X and Y scale (scale up by a factor of 3)
+                Animation.RELATIVE_TO_SELF, 0.5f,  // Pivot X (center of the view)
+                Animation.RELATIVE_TO_SELF, 0.5f   // Pivot Y (center of the view)
+        );
+
+        animation.setDuration(1000);
+        animation.setFillAfter(true);
+        animation.setAnimationListener(animationListener);
+        return animation;
+    }
+
+
+    private Animation initSlideUpAnimation(){
+        ScaleAnimation animation = new ScaleAnimation(
+                1.0f, 1.0f, // From X and Y scale (no scaling)
+                1.0f, 0.0f  // To X and Y scale (shrink vertically to 0)
+        );
+
+        animation.setDuration(500);
+        animation.setFillAfter(true);
+        animation.setAnimationListener(animationListener);
+        return animation;
+    }
+
+
+    private Animation initRotateAnimation() {
+        RotateAnimation rotateAnimation = new RotateAnimation(
+                0f, 360f,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+
+        rotateAnimation.setInterpolator(new LinearInterpolator());
+        rotateAnimation.setDuration(800); // Adjust the duration as needed
+        rotateAnimation.setRepeatCount(2);
+
+        return rotateAnimation;
+    }
+
+
+    private Animation initMoveAnimation(){
+        TranslateAnimation animation = new TranslateAnimation(
+                Animation.RELATIVE_TO_PARENT, 0f,
+                Animation.RELATIVE_TO_PARENT, 0.75f,
+                Animation.RELATIVE_TO_PARENT, 0f,
+                Animation.RELATIVE_TO_PARENT, 0f
+        );
+
+        animation.setDuration(800);
+        animation.setFillAfter(true);
+        animation.setInterpolator(new LinearInterpolator());
+        animation.setAnimationListener(animationListener);
+        return animation;
+    }
+
+    private Animation initFadeOutAnimation(){
+        AlphaAnimation animation = new AlphaAnimation(1f, 0f);
+        animation.setDuration(1000);
+        animation.setFillAfter(true);
+        animation.setAnimationListener(animationListener);
+        return animation;
     }
 
     private Animation initBounceAnimation() {
@@ -66,8 +199,6 @@ public class Bai1 extends AppCompatActivity {
 
         return animation;
     }
-
-
 
     private Animation initFadeInAnimation(){
         AlphaAnimation animation = new AlphaAnimation(0f, 1f);
