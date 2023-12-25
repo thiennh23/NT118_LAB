@@ -13,13 +13,13 @@
         android:theme="@style/Theme.LAB04"
         tools:targetApi="31">
         <activity
-            android:name=".Phan3"
+            android:name=".PHAN3.Phan3"
             android:exported="false" />
         <activity
-            android:name=".Phan2"
+            android:name=".PHAN2.Phan2"
             android:exported="false" />
         <activity
-            android:name=".Phan1"
+            android:name=".PHAN1.Phan1"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

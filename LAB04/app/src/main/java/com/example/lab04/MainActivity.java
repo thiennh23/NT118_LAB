@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lab04.PHAN1.Phan1;
+import com.example.lab04.PHAN2.Phan2;
+import com.example.lab04.PHAN3.Phan3;
+
 public class MainActivity extends AppCompatActivity {
     Button btn1, btn2, btn3;
     @Override

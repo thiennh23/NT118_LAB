@@ -1,4 +1,4 @@
-package com.example.lab04;
+package com.example.lab04.PHAN1;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

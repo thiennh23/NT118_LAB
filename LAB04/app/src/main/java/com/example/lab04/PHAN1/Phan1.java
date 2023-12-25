@@ -1,16 +1,15 @@
-package com.example.lab04;
+package com.example.lab04.PHAN1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.lab04.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tVName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tVEmail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="18sp"
+        android:layout_weight="1"
+        android:textColor="@android:color/darker_gray"/>
+    <TextView
+        android:id="@+id/tVPhoneNubmer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="18sp"
+        android:layout_weight="1"
+        android:textColor="@android:color/darker_gray"/>
+
+</LinearLayout>
