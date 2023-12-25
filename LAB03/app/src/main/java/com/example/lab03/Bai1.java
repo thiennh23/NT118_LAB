@@ -33,6 +33,7 @@ public class Bai1 extends AppCompatActivity {
 
         //ANIMATION USING CODE FUNCTION
         handleClickAnimationCode(btnFadeInCode, initFadeInAnimation());
+        handleClickAnimationCode(btnBlinkCode, initBlinkAnimation());
 
         //ANIMATION USING XML FILES
         handleClickAnimationXml(btnFadeInXml, R.anim.anim_fade_in);
@@ -53,6 +54,17 @@ public class Bai1 extends AppCompatActivity {
         animation.setFillAfter(true);
         animation.setAnimationListener(animationListener);
         return animation;
+    }
+
+    private Animation initBlinkAnimation(){
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(300);
+        anim.setStartOffset(20);
+        anim.setRepeatMode(Animation.REVERSE);
+        anim.setRepeatCount(3);
+        anim.setAnimationListener(animationListener);
+        anim.setFillAfter(true);
+        return anim;
     }
 
     private void handleClickAnimationCode(Button btn, final Animation animation){
