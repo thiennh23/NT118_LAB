@@ -10,6 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.BounceInterpolator;
+
 
 public class Bai1 extends AppCompatActivity {
 
@@ -34,6 +37,7 @@ public class Bai1 extends AppCompatActivity {
         //ANIMATION USING CODE FUNCTION
         handleClickAnimationCode(btnFadeInCode, initFadeInAnimation());
         handleClickAnimationCode(btnBlinkCode, initBlinkAnimation());
+        handleClickAnimationCode(btnBounceCode, initBounceAnimation());
 
         //ANIMATION USING XML FILES
         handleClickAnimationXml(btnFadeInXml, R.anim.anim_fade_in);
@@ -47,6 +51,23 @@ public class Bai1 extends AppCompatActivity {
         handleClickAnimationXml(btnZoomOutXml, R.anim.anim_zoom_out);
         handleClickAnimationXml(btnCombineXml, R.anim.anim_combine);
     }
+
+    private Animation initBounceAnimation() {
+        ScaleAnimation animation = new ScaleAnimation(
+                1.0f, 1.0f, // Start and end scale X
+                0.0f, 1.0f, // Start and end scale Y
+                Animation.RELATIVE_TO_SELF, 0.5f, // Pivot point X relative to view width
+                Animation.RELATIVE_TO_SELF, 0.5f // Pivot point Y relative to view height
+        );
+
+        animation.setDuration(500);
+        animation.setFillAfter(true);
+        animation.setInterpolator(new BounceInterpolator()); // Use bounce interpolator
+
+        return animation;
+    }
+
+
 
     private Animation initFadeInAnimation(){
         AlphaAnimation animation = new AlphaAnimation(0f, 1f);
