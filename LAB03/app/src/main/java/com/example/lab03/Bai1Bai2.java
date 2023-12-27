@@ -47,6 +47,7 @@ public class Bai1Bai2 extends AppCompatActivity {
 
                 Intent intent = new Intent(Bai1Bai2.this, Bai3.class);
                 startActivity(intent);
+                finish();
             }
         });
 
