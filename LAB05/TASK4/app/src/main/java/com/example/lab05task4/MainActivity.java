@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mediaPlayer.setDataSource(url);
             mediaPlayer.prepare();
-            mediaPlayer.setVolume(1f, 1f);
+            mediaPlayer.setVolume(3f, 3f);
             mediaPlayer.setLooping(false);
             mediaPlayer.start();
         } catch (Exception e) {
