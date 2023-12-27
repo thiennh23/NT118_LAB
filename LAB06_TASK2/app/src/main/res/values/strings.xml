@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BTTH6_2</string>
+    <string name="you_have_a_new_message">Hey! You have a new message</string>
+    <string name="power_conneted">Power connected</string>
+    <string name="power_disconnected">Power disconnected</string>
+</resources>
