@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Kích thước margin_base -->
+    <dimen name="margin_base">5dp</dimen>
+
+    <!-- Kích thước văn bản text_small -->
+    <dimen name="text_small">14sp</dimen>
+
+    <!-- Kích thước văn bản text_medium -->
+    <dimen name="text_medium">16sp</dimen>
+
+    <!-- Kích thước văn bản text_medium_large -->
+    <dimen name="text_medium_large">18sp</dimen>
+
+    <!-- Kích thước văn bản text_large -->
+    <dimen name="text_large">20sp</dimen>
+</resources>
