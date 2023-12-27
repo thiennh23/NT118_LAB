@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">LAB05TASK2</string>
+
+
+    <!-- Chuỗi bg_work_is_over -->
+    <string name="bg_work_is_over">Background work is over!</string>
+
+    <!-- Chuỗi execute -->
+    <string name="execute">Execute</string>
+
+    <!-- Chuỗi enter_some_data_here -->
+    <string name="enter_some_data_here">Enter some data here</string>
 </resources>
