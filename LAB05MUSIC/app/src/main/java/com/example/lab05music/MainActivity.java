@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
@@ -14,8 +15,8 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
-    private String audioUrl = "https://www.ssaurel.com/tmp/mymusic.mp3"; // Replace with the actual URL.
-
+    //private String audioUrl = "https://www.ssaurel.com/tmp/mymusic.mp3"; // Replace with the actual URL.
+    private String audioUrl = "https://thiennh23.github.io/NT118_LAB/Lover.mp3";
     private ProgressDialog progressDialog;
 
     @Override
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button playButton = findViewById(R.id.playButton);
-        Button pauseButton = findViewById(R.id.pauseButton);
-        Button restartButton = findViewById(R.id.restartButton);
+        ImageView playButton = findViewById(R.id.playButton);
+        ImageView pauseButton = findViewById(R.id.pauseButton);
+        ImageView restartButton = findViewById(R.id.restartButton);
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
