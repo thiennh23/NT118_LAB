@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -41,11 +42,11 @@ public class Bai1Bai2 extends AppCompatActivity {
 
         ivUitLogo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                Log.d("MainActivity", "ivUitLogo clicked");
+
                 Intent intent = new Intent(Bai1Bai2.this, Bai3.class);
                 startActivity(intent);
-                // Animation for moving from right to left
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         });
 
@@ -72,6 +73,12 @@ public class Bai1Bai2 extends AppCompatActivity {
         handleClickAnimationXml(btnZoomInXml, R.anim.anim_zoom_in);
         handleClickAnimationXml(btnZoomOutXml, R.anim.anim_zoom_out);
         handleClickAnimationXml(btnCombineXml, R.anim.anim_combine);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     private Animation initCombinedAnimation(){

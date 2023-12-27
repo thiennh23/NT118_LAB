@@ -18,11 +18,16 @@ public class Bai3 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Bai3.this, Bai1Bai2.class);
-                startActivity(intent);
-               /* // Animation for moving from right to left
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);*/
+                Intent intentMove = new Intent(Bai3.this,Bai1Bai2.class);
+                startActivity(intentMove);
+                finish();
             }
         });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 }
