@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LAB05TASK3</string>
+
+    <!-- Chuỗi quick_job -->
+    <string name="quick_job">Quick Job</string>
+
+    <!-- Chuỗi slow_job -->
+    <string name="slow_job">Slow Job</string>
+
+    <!-- Chuỗi please_wait -->
+    <string name="please_wait">Some SLOW job is being done. Please wait...</string>
 </resources>
