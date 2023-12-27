@@ -1,0 +1,9 @@
+# Phát triển ứng dụng trên thiết bị di động - NT118.O14.MMCL
+# Nguyễn Hữu Thiện - 21522626
+# NỘI DUNG
+1. CÁC LAYOUT CƠ BẢN
+2. LISTVIEW VÀ RECYCLERVIER
+3. ANIMATION
+4. SQLITE
+5. MULTI-THREADING
+6. BROADCAST RECEIVER
