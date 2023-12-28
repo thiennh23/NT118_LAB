@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 super.handleMessage(msg);
 
                 String returnedValue = (String) msg.obj;
-                // Don something vith the value sent by background thread here...
+                // Done something with the value sent by background thread here...
 
                 tvMsgReturned.setText(getString(R.string.returned_by_bg_thread) + returnedValue);
                 pbFirst.incrementProgressBy(2);
