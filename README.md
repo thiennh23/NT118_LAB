@@ -1,5 +1,5 @@
 # Phát triển ứng dụng trên thiết bị di động - NT118.O14.MMCL
-# Nguyễn Hữu Thiện - 21522626
+# Nguyễn Hữu Thiện - 21522626 
 # NỘI DUNG
 1. CÁC LAYOUT CƠ BẢN
 2. LISTVIEW VÀ RECYCLERVIER
